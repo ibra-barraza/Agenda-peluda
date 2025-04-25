@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1065271046610",
+    "project_id": "agendapeludacalendario",
+    "storage_bucket": "agendapeludacalendario.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065271046610:android:1e250350368a0f6d5e980b",
+        "android_client_info": {
+          "package_name": "mx.edu.itesca.agendapeludacalendario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065271046610-819psltvp00o0v2a97bfvunsfj6cg7sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.edu.itesca.agendapeludacalendario",
+            "certificate_hash": "ca946013ea11929df7470546187ac2c8540234b5"
+          }
+        },
+        {
+          "client_id": "1065271046610-d4kjpphfrai8f463kkpin3peroloh0p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAubGv9uxZlM9bjMnVrQrBMIGp910JqDMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065271046610-d4kjpphfrai8f463kkpin3peroloh0p3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

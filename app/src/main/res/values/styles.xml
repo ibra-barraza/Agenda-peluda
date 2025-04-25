@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomCalendarView" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">#24526A</item>
+    </style>
+</resources>

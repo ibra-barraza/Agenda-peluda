@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agenda Peluda</string>
+    <string name="titulo_agenda">AGENDA PELUDA</string>
+    <string name="boton_comenzar">COMENZAR</string>
+    <string name="logo_descripcion">Logo de la aplicación</string>
+    <string name="User">User</string>
+
+    <string name="nombre_mascota">Nombre de la mascota</string>
+    <string name="tipo_mascota">Tipo de mascota</string>
+    <string name="edad_mascota">Edad (años)</string>
+    <string name="peso_mascota">Peso (kgs)</string>
+    <string name="genero_mascota">Género de la mascota</string>
+    <string name="macho">Macho</string>
+    <string name="hembra">Hembra</string>
+    <string name="guardar_mascota">Guardar Mascota</string>
+    <string name="mas_tarde">Más tarde</string>
+    <string name="huellita_desc">Icono de huella</string>
+    <string name="default_web_client_id">1:1065271046610:web:764b69405a0010e85e980b</string>
+</resources>
