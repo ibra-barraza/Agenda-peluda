@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#24526A"
+            android:text="Menú"
+            android:fontFamily="@font/quicksand_bold" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/ListNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la mascota"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_bold" />
+
+
+    <TextView
+        android:id="@+id/ListTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de mascota"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_bold" />
+    <TextView
+        android:id="@+id/LisEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad de mascota"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_bold" />
+
+
+    <TextView
+        android:id="@+id/ListSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macho/hembra"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_bold" />
+
+    <TextView
+        android:id="@+id/ListPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_bold" />
+
+
+     />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#24526A"
+            android:text="Editar"
+            android:fontFamily="@font/quicksand_bold" />
+
+        <Button
+            android:id="@+id/removeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#24526A"
+            android:text="Eliminar"
+            android:fontFamily="@font/quicksand_bold" />
+    </LinearLayout>
+
+</LinearLayout>

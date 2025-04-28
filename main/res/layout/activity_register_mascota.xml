@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color_principal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".RegisterMascota">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Cancelar"
+            android:textColor="@color/Color_Botton" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="Registrar mascota"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:enabled="true"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Agregar"
+            android:textColor="@color/Color_Botton" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/nombre_mascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:fontFamily="@font/quicksand_regular"
+        android:hint="@string/nombre_mascota"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Tipo de mascota"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/tipo_mascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/quicksand_regular"
+        android:minHeight="48dp"
+        android:paddingVertical="12dp" />
+
+    <EditText
+        android:id="@+id/edad_mascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:fontFamily="@font/quicksand_regular"
+        android:hint="@string/edad_mascota"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/genero_mascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/macho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/macho" />
+
+        <RadioButton
+            android:id="@+id/hembra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/hembra" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/peso_mascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:fontFamily="@font/quicksand_regular"
+        android:hint="@string/peso_mascota"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+</LinearLayout>

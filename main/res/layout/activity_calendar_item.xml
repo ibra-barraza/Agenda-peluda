@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/petName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la mascota"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand_bold" />
+
+    <TextView
+        android:id="@+id/activityTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Hora: 10:00 AM"
+        android:fontFamily="@font/quicksand_regular" />
+
+    <TextView
+        android:id="@+id/activityDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Descripción de la actividad"
+        android:fontFamily="@font/quicksand_regular" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#24526A"
+            android:text="Editar"
+            android:fontFamily="@font/quicksand_bold" />
+
+        <Button
+            android:id="@+id/removeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#24526A"
+            android:text="Eliminar"
+            android:fontFamily="@font/quicksand_bold" />
+    </LinearLayout>
+
+</LinearLayout>

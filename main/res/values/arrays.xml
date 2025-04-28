@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="activity_types">
+        <item>Paseo</item>
+        <item>Cita médica</item>
+        <item>Baño</item>
+        <item>Corte de uñas</item>
+        <item>Cumpleaños</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="repeat_options">
+        <item>Nunca</item>
+        <item>Cada día</item>
+        <item>Cada dos días</item>
+        <item>Cada semana</item>
+        <item>Cada dos semanas</item>
+        <item>Cada mes</item>
+        <item>Cada año</item>
+    </string-array>
+</resources>
