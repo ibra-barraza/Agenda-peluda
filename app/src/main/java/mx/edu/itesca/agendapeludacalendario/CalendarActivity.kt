@@ -66,6 +66,11 @@ class CalendarActivity : AppCompatActivity() {
             startActivity(Intent(this, activity_add_event::class.java))
         }
 
+        val buttonMascotas: Button = findViewById(R.id.viewMascotasButton)
+        buttonMascotas.setOnClickListener {
+            startActivity(Intent(this, MascotasActivity::class.java))
+        }
+
         listView = findViewById(R.id.listView)
         calendarView = findViewById(R.id.calendarView)
 

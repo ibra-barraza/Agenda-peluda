@@ -44,17 +44,29 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/viewMascotasButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#24526A"
+        android:text="Ver mascotas"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#24526A"
         android:text="Añadir actividad"
         android:fontFamily="@font/quicksand_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/viewMascotasButton" />
 
     <ListView
         android:id="@+id/listView"

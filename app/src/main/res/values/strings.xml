@@ -17,4 +17,15 @@
     <string name="mas_tarde">Más tarde</string>
     <string name="huellita_desc">Icono de huella</string>
     <string name="default_web_client_id">1:1065271046610:web:764b69405a0010e85e980b</string>
+
+    <string-array name="especies">
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Pez</item>
+        <item>Hámster</item>
+        <item>Tortuga</item>
+        <item>Conejo</item>
+        <item>Perico</item>
+        <item>Canario</item>
+    </string-array>
 </resources>
