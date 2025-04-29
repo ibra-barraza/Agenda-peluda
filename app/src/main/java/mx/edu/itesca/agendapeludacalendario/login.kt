@@ -18,6 +18,8 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -101,8 +103,33 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.d("DEBUG", "Autenticación exitosa. Usuario: ${auth.currentUser?.uid}") // Paso 5
-                    navigateToCalendar()
+                    val user = auth.currentUser
+                    val db = Firebase.firestore
+
+                    if (user != null) {
+                        val userDocRef = db.collection("usuarios").document(user.uid)
+
+                        userDocRef.get().addOnSuccessListener { document ->
+                            if (!document.exists()) {
+                                val newUser = hashMapOf(
+                                    "uid" to user.uid,
+                                    "username" to (user.displayName ?: ""),
+                                    "correo" to (user.email ?: ""),
+                                    "createdAt" to FieldValue.serverTimestamp()
+                                )
+                                userDocRef.set(newUser)
+                                    .addOnSuccessListener {
+                                        Log.d("FIRESTORE", "Usuario guardado correctamente")
+                                    }
+                                    .addOnFailureListener {
+                                        Log.e("FIRESTORE", "Error al guardar usuario: ${it.message}")
+                                    }
+                            } else {
+                                Log.d("FIRESTORE", "El usuario ya existe")
+                            }
+                            navigateToCalendar()
+                        }
+                    }
                 } else {
                     Log.e("DEBUG", "ERROR FIREBASE: ${task.exception?.message}") // Paso 6
                     showError("Firebase error: ${task.exception?.message}")

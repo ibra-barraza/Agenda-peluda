@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity() {
@@ -66,10 +68,37 @@ class RegisterActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this, CalendarActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(intent)
-                    finish()
+                    val user = auth.currentUser
+                    user?.let {
+                        val uid = it.uid
+                        val db = FirebaseFirestore.getInstance()
+                        val userRef = db.collection("usuarios").document(uid)
+
+                        // Verificamos si ya existe (opcional si es registro nuevo)
+                        userRef.get().addOnSuccessListener { document ->
+                            if (!document.exists()) {
+                                val userData = hashMapOf(
+                                    "uid" to user.uid,
+                                    "username" to email.substringBefore("@"),
+                                    "correo" to email,
+                                    "createdAt" to FieldValue.serverTimestamp()
+                                )
+
+                                userRef.set(userData)
+                                    .addOnSuccessListener {
+                                        Log.d("Firestore", "Usuario guardado en Firestore")
+                                        val intent = Intent(this, CalendarActivity::class.java)
+                                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.e("Firestore", "Error al guardar usuario", e)
+                                        Toast.makeText(this, "Error al guardar usuario", Toast.LENGTH_LONG).show()
+                                    }
+                            }
+                        }
+                    }
                 } else {
                     Log.w("ERROR", "signInWithEmail:failure", task.exception)
                     val errorMessage = when (task.exception) {
