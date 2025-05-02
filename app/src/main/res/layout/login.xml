@@ -39,7 +39,8 @@
         android:padding="12dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        android:drawableStart="@drawable/ic_email"/>
+        android:drawableStart="@drawable/ic_email"
+        android:maxLength="50"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -53,7 +54,8 @@
         android:padding="12dp"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        android:drawableStart="@drawable/ic_lock"/>
+        android:drawableStart="@drawable/ic_lock"
+        android:maxLength="30"/>
 
     <TextView
         android:id="@+id/tvError"

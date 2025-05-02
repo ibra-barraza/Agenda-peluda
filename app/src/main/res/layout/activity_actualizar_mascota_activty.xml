@@ -25,9 +25,9 @@
             android:text="Cancelar"
             android:textColor="@color/Color_Botton"
             app:icon="@drawable/ic_close"
-            app:iconTint="@color/black"
             app:iconGravity="textStart"
-            app:iconPadding="8dp" />
+            app:iconPadding="8dp"
+            app:iconTint="@color/black" />
 
         <TextView
             android:layout_width="0dp"
@@ -45,14 +45,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_add"
             android:enabled="true"
             android:fontFamily="@font/quicksand_bold"
             android:text="Actualizar"
             android:textColor="@color/Color_Botton"
-            android:drawableLeft="@drawable/ic_add"
-            app:iconTint="@color/black"
             app:iconGravity="textStart"
- />
+            app:iconTint="@color/black" />
     </LinearLayout>
 
     <TextView
@@ -75,7 +74,8 @@
         android:inputType="text"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:maxLength="50"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -84,8 +84,7 @@
         android:fontFamily="@font/quicksand_bold"
         android:text="Especie"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        />
+        android:textSize="16sp" />
 
     <Spinner
         android:id="@+id/tipo_mascota"
@@ -94,19 +93,18 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/quicksand_regular"
         android:minHeight="48dp"
-        android:paddingVertical="12dp"
-         />
+        android:paddingVertical="12dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/ic_age"
         android:fontFamily="@font/quicksand_bold"
         android:text="Edad (años)"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:drawableStart="@drawable/ic_age"
-        />
+        android:textSize="16sp" />
+
     <EditText
         android:id="@+id/edad_mascota"
         android:layout_width="match_parent"
@@ -124,12 +122,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/ic_weight"
         android:fontFamily="@font/quicksand_bold"
         android:text="Peso (kgs)"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:drawableStart="@drawable/ic_weight"
-        />
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/peso_mascota"
@@ -139,7 +136,7 @@
         android:background="@android:drawable/editbox_background"
         android:fontFamily="@font/quicksand_regular"
         android:hint="@string/peso_mascota"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:padding="12dp"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -148,12 +145,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:drawableStart="@drawable/ic_sex"
         android:fontFamily="@font/quicksand_bold"
         android:text="Sexo"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:drawableStart="@drawable/ic_sex"
-        />
+        android:textSize="16sp" />
 
     <RadioGroup
         android:id="@+id/genero_mascota"
@@ -167,15 +163,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
-            android:text="@string/macho"/>
+            android:text="@string/macho" />
 
         <RadioButton
             android:id="@+id/hembra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
-            android:text="@string/hembra"
-            />
+            android:text="@string/hembra" />
     </RadioGroup>
 
 </LinearLayout>

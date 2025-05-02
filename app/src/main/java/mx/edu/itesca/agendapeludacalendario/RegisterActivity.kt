@@ -49,31 +49,15 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         button.setOnClickListener {
-            val emailText = email.text.toString()
-            val passwordText = password.text.toString()
-            val confirmPasswordText = confirmPassword.text.toString()
-
-            when {
-                emailText.isEmpty() || passwordText.isEmpty() || confirmPasswordText.isEmpty() -> {
-                    errorTv.text = "Todos los campos deben de ser llenados"
-                    errorTv.visibility = View.VISIBLE
-                }
-                passwordText.length < 6 -> {
-                    errorTv.text = "La contraseña debe tener al menos 6 caracteres"
-                    errorTv.visibility = View.VISIBLE
-                }
-                passwordText.length > 25 -> {
-                    errorTv.text = "La contraseña no debe superar los 25 caracteres"
-                    errorTv.visibility = View.VISIBLE
-                }
-                passwordText != confirmPasswordText -> {
-                    errorTv.text = "Las contraseñas no coinciden"
-                    errorTv.visibility = View.VISIBLE
-                }
-                else -> {
-                    errorTv.visibility = View.INVISIBLE
-                    signIn(emailText, passwordText)
-                }
+            if (email.text.isEmpty() || password.text.isEmpty() || confirmPassword.text.isEmpty()) {
+                errorTv.text = "Todos los campos deben de ser llenados"
+                errorTv.visibility = View.VISIBLE
+            } else if (!password.text.toString().equals(confirmPassword.text.toString())) {
+                errorTv.text = "Las contraseñas no coinciden"
+                errorTv.visibility = View.VISIBLE
+            } else {
+                errorTv.visibility = View.INVISIBLE
+                signIn(email.text.toString(), password.text.toString())
             }
         }
 

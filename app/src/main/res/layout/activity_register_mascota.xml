@@ -77,7 +77,8 @@
         android:inputType="text"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:maxLength="50"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -140,7 +141,7 @@
         android:background="@android:drawable/editbox_background"
         android:fontFamily="@font/quicksand_regular"
         android:hint="@string/peso_mascota"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:padding="12dp"
         android:textColor="@android:color/black"
         android:textSize="16sp" />

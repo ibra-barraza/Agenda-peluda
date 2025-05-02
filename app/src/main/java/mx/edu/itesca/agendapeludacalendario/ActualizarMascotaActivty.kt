@@ -79,34 +79,11 @@ class ActualizarMascotaActivity : AppCompatActivity() {
     }
 
     private fun actualizarMascota() {
-        val nombre = nombreEditText.text.toString().trim()
+        val nombre = nombreEditText.text.toString()
         val especie = especieSpinner.selectedItem.toString()
-        val edadStr = edadEditText.text.toString().trim()
-        val pesoStr = pesoEditText.text.toString().trim()
+        val edad = edadEditText.text.toString().toIntOrNull() ?: 0
+        val peso = pesoEditText.text.toString().toDoubleOrNull() ?: 0.0
         val genero = if (machoRadioButton.isChecked) "Macho" else "Hembra"
-
-
-        if (nombre.isEmpty() || edadStr.isEmpty() || pesoStr.isEmpty()) {
-            Toast.makeText(this, "Todos los campos deben estar completos", Toast.LENGTH_SHORT)
-                .show()
-            return
-        }
-
-
-        val edad = edadStr.toIntOrNull()
-        if (edad == null || edad < 0 || edad > 15) {
-            Toast.makeText(this, "Edad inválida. Debe ser entre 0 y 15 años", Toast.LENGTH_SHORT)
-                .show()
-            return
-        }
-
-
-        val peso = pesoStr.toDoubleOrNull()
-        if (peso == null || peso <= 0) {
-            Toast.makeText(this, "Peso inválido. Debe ser un número positivo", Toast.LENGTH_SHORT)
-                .show()
-            return
-        }
 
         val mascotaActualizada = hashMapOf(
             "nombre" to nombre,
