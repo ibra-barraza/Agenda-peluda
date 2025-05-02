@@ -34,11 +34,12 @@
         android:layout_marginBottom="16dp"
         android:background="@android:drawable/editbox_background"
         android:fontFamily="@font/quicksand_regular"
-        android:hint="Nombre de usuario"
+        android:hint="Correo electrónico"
         android:inputType="text"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_email"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -51,7 +52,8 @@
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_lock"/>
 
     <TextView
         android:id="@+id/tvError"
@@ -60,7 +62,8 @@
         android:layout_marginBottom="16dp"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="14sp"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        app:drawableStartCompat ="@drawable/ic_warning"/>
 
     <Button
         android:id="@+id/btnLogin"

@@ -41,7 +41,8 @@
         android:inputType="textEmailAddress"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_email"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -54,7 +55,8 @@
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_lock"/>
 
     <EditText
         android:id="@+id/etCPassword"
@@ -67,7 +69,8 @@
         android:inputType="textPassword"
         android:padding="12dp"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_lock"/>
 
     <TextView
         android:id="@+id/tvError"

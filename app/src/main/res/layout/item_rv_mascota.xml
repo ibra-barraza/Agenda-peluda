@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvMascota"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -37,24 +37,48 @@
             android:layout_marginTop="8dp"
             android:gravity="end">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnActualizar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Actualizar"
                 android:backgroundTint="#24526A"
+                android:fontFamily="@font/quicksand_bold"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="36dp"
+                android:paddingHorizontal="12dp"
+                android:text="Actualizar"
                 android:textColor="@android:color/white"
-                android:fontFamily="@font/quicksand_bold"/>
+                android:textSize="14sp"
+                app:icon="@drawable/ic_edit"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                tools:ignore="TouchTargetSizeCheck" />
 
-            <Button
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Eliminar"
                 android:layout_marginStart="8dp"
                 android:backgroundTint="@android:color/holo_red_dark"
+                android:fontFamily="@font/quicksand_bold"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="36dp"
+                android:paddingHorizontal="12dp"
+                android:text="Eliminar"
                 android:textColor="@android:color/white"
-                android:fontFamily="@font/quicksand_bold"/>
+                android:textSize="14sp"
+                app:icon="@drawable/ic_delete"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

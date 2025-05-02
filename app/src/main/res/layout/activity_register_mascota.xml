@@ -23,7 +23,12 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/quicksand_bold"
             android:text="Cancelar"
-            android:textColor="@color/Color_Botton" />
+            android:textColor="@color/Color_Botton"
+            app:icon="@drawable/ic_close"
+            app:iconTint="@color/black"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            />
 
         <TextView
             android:layout_width="0dp"
@@ -33,7 +38,7 @@
             android:gravity="center"
             android:text="Registrar mascota"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
@@ -44,7 +49,12 @@
             android:enabled="true"
             android:fontFamily="@font/quicksand_bold"
             android:text="Agregar"
-            android:textColor="@color/Color_Botton" />
+            android:textColor="@color/Color_Botton"
+            app:icon="@drawable/ic_add"
+            app:iconSize="24dp"
+            app:iconTint="@color/black"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"/>
     </LinearLayout>
 
     <TextView
@@ -94,7 +104,9 @@
         android:fontFamily="@font/quicksand_bold"
         android:text="Edad (años)"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_age"
+        />
 
     <EditText
         android:id="@+id/edad_mascota"
@@ -116,7 +128,9 @@
         android:fontFamily="@font/quicksand_bold"
         android:text="Peso (kgs)"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_weight"
+        />
 
     <EditText
         android:id="@+id/peso_mascota"
@@ -138,7 +152,9 @@
         android:fontFamily="@font/quicksand_bold"
         android:text="Sexo"
         android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_sex"
+        />
 
     <RadioGroup
         android:id="@+id/genero_mascota"

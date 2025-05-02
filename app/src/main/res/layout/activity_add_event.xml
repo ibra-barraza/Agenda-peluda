@@ -23,7 +23,11 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/quicksand_bold"
             android:text="Cancelar"
-            android:textColor="@color/Color_Botton" />
+            android:textColor="@color/Color_Botton"
+            app:icon="@drawable/ic_close"
+            app:iconTint="@color/black"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" /> <!-- Icono de cancelación -->
 
         <TextView
             android:layout_width="0dp"
@@ -33,7 +37,7 @@
             android:gravity="center"
             android:text="Nueva actividad"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
@@ -44,7 +48,9 @@
             android:enabled="true"
             android:fontFamily="@font/quicksand_bold"
             android:text="Agregar"
-            android:textColor="@color/Color_Botton" />
+            android:textColor="@color/Color_Botton"
+            android:drawableLeft="@drawable/ic_add" /> <!-- Icono de agregar -->
+
     </LinearLayout>
 
     <EditText
@@ -112,8 +118,6 @@
             android:textColor="@android:color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Sección "Empieza" movida más arriba -->
-
     <EditText
         android:id="@+id/notas"
         android:layout_width="match_parent"
@@ -153,7 +157,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Día actual"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" /> <!-- Icono de calendario -->
 
         <Button
             android:id="@+id/startTimeButton"
@@ -163,7 +167,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Hora actual"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" /> <!-- Icono de reloj -->
     </LinearLayout>
 
     <TextView
@@ -189,7 +193,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Seleccionar fecha"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" /> <!-- Icono de calendario -->
 
         <Button
             android:id="@+id/endTimeButton"
@@ -199,7 +203,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Seleccionar hora"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" /> <!-- Icono de reloj -->
     </LinearLayout>
 
     <TextView
@@ -236,6 +240,11 @@
         android:backgroundTint="@color/Color_Botton"
         android:fontFamily="@font/quicksand_bold"
         android:text="Añadir nueva mascota"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        app:icon="@drawable/ic_add"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        />
 
 </LinearLayout>
