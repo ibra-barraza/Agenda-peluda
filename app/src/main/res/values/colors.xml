@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Color_principal">#DFEBEB</color>
     <color name="Color_Botton">#25536A</color>
+    <color name="red">#F44336</color>
+
 </resources>
