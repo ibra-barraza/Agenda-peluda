@@ -167,8 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
-            android:text="@string/macho"
-            app:drawableStart="@drawable/ic_male" />
+            android:text="@string/macho"/>
 
         <RadioButton
             android:id="@+id/hembra"
@@ -176,7 +175,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
             android:text="@string/hembra"
-            app:drawableStart="@drawable/ic_female" />
+            />
     </RadioGroup>
 
 </LinearLayout>

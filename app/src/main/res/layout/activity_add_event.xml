@@ -157,8 +157,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Día actual"
-            android:textColor="@android:color/white" /> <!-- Icono de calendario -->
-
+            android:textColor="@android:color/white" />
         <Button
             android:id="@+id/startTimeButton"
             android:layout_width="wrap_content"
@@ -167,7 +166,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Hora actual"
-            android:textColor="@android:color/white" /> <!-- Icono de reloj -->
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <TextView
@@ -193,7 +192,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Seleccionar fecha"
-            android:textColor="@android:color/white" /> <!-- Icono de calendario -->
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/endTimeButton"
@@ -203,7 +202,7 @@
             android:backgroundTint="@color/Color_Botton"
             android:fontFamily="@font/quicksand_bold"
             android:text="Seleccionar hora"
-            android:textColor="@android:color/white" /> <!-- Icono de reloj -->
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <TextView
