@@ -18,6 +18,20 @@
         android:fontFamily="@font/quicksand_bold"
         android:textSize="24sp" />
 
+    <Button
+        android:id="@+id/addMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#24526A"
+        android:text="Añadir mascota"
+        android:fontFamily="@font/quicksand_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:icon="@drawable/ic_add"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMascotas"
         android:layout_width="match_parent"

@@ -82,6 +82,11 @@ class RegisterMascota : AppCompatActivity() {
                 Toast.makeText(this, "Usuario no autenticado", Toast.LENGTH_SHORT).show()
             }
         }
+
+        val cancelButton = findViewById<Button>(R.id.cancelButton)
+        cancelButton.setOnClickListener {
+            finish()
+        }
     }
 
 }

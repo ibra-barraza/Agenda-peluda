@@ -1,7 +1,9 @@
 package mx.edu.itesca.agendapeludacalendario
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +23,7 @@ class MascotasActivity : AppCompatActivity() {
         obtenerMascotas()
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mascotas)
@@ -35,6 +38,12 @@ class MascotasActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         obtenerMascotas()
+
+        val nuevaMascota: Button = findViewById(R.id.addMascota)
+        nuevaMascota.setOnClickListener {
+            val intent = Intent(this, RegisterMascota::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun obtenerMascotas() {
