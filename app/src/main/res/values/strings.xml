@@ -28,4 +28,12 @@
         <item>Perico</item>
         <item>Canario</item>
     </string-array>
+
+    <string-array name="actividades">
+        <item>Veterinario</item>
+        <item>Baño</item>
+        <item>Comida</item>
+        <item>Paseo</item>
+        <item>Jugar</item>
+    </string-array>
 </resources>

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AgendaPeludaCalendario"
         tools:targetApi="31">
         <activity
+            android:name=".ActualizarActividad"
+            android:exported="false" />
+        <activity
             android:name=".ActualizarMascotaActivity"
             android:exported="false" />
         <activity

@@ -1,62 +1,99 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvCalendarItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
-    android:orientation="vertical"
-    android:padding="8dp">
-
-    <TextView
-        android:id="@+id/petName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre de la mascota"
-        android:textSize="16sp"
-        android:fontFamily="@font/quicksand_bold" />
-
-    <TextView
-        android:id="@+id/activityTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Hora: 10:00 AM"
-        android:fontFamily="@font/quicksand_regular" />
-
-    <TextView
-        android:id="@+id/activityDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Descripción de la actividad"
-        android:fontFamily="@font/quicksand_regular" />
+    android:layout_margin="6dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    android:elevation="4dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/editButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+        <TextView
+            android:id="@+id/titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#24526A"
-            android:text="Editar"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/quicksand_bold"
-            app:icon="@drawable/ic_edit"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp" />
+            android:text="TITULO"
+            android:textSize="16sp"
+            android:fontFamily="@font/quicksand_bold" />
 
-        <Button
-            android:id="@+id/removeButton"
+        <TextView
+            android:id="@+id/tiempo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:text="Eliminar"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/quicksand_bold"
-            app:icon="@drawable/ic_delete"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp" />
+            android:layout_marginTop="4dp"
+            android:text="De 10:00 a 17:00"
+            android:fontFamily="@font/quicksand_regular" />
+
+        <TextView
+            android:id="@+id/tipoActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tipo de la actividad"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand_regular" />
+
+        <TextView
+            android:id="@+id/notasActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Notas sobre la actividad"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand_regular"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/participantesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mascotas participantes:"
+            android:textSize="14sp"
+            android:fontFamily="@font/quicksand_bold" />
+
+        <LinearLayout
+            android:id="@+id/listaMascotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#24526A"
+                android:text="Editar"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/quicksand_bold"
+                app:icon="@drawable/ic_edit"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+
+            <Button
+                android:id="@+id/removeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="Eliminar"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/quicksand_bold"
+                app:icon="@drawable/ic_delete"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>
