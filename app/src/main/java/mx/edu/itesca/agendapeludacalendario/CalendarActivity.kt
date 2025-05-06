@@ -145,19 +145,12 @@ class CalendarActivity : AppCompatActivity() {
     }
 
     private fun eliminarActividad(actividad: ActividadItem, fecha: String) {
-        val userId = auth.currentUser?.uid ?: return
-        db.collection("usuarios")
-            .document(userId)
-            .collection("actividades")
-            .document(actividad.id!!)
-            .delete()
-            .addOnSuccessListener {
-                Toast.makeText(this, "Actividad eliminada", Toast.LENGTH_SHORT).show()
-                obtenerActividades(fecha)
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show()
-            }
+        val intent = Intent(this, DeleteActividad::class.java).apply {
+            putExtra("actividadId", actividad.id)
+            putExtra("createdAt", actividad.createdAt)
+            putExtra("fecha", fecha)
+        }
+        startActivity(intent)
     }
 
     private fun irActualizarActividad(actividad: ActividadItem) {

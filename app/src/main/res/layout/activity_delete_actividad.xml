@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".DeleteActividad">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp">
+
+        <Button
+            android:id="@+id/btnCancelDeletion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Cancelar"
+            android:textColor="@color/Color_Botton"
+            app:icon="@drawable/ic_close"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:text="Eliminar actividad"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDoDeletion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_delete"
+            android:enabled="true"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Eliminar"
+            android:textColor="@color/Color_Botton" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="Modo de eliminación"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupModoDel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+        <RadioButton
+            android:id="@+id/rbDelIndividual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Individual"
+            android:textSize="16sp"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/rbDelSiguientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Siguientes"
+            android:textSize="16sp" />
+        <RadioButton
+            android:id="@+id/rbDelTodas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todas"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+</LinearLayout>
