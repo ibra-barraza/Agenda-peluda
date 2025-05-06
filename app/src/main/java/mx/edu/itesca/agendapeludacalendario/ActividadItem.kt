@@ -8,5 +8,6 @@ data class ActividadItem(
     var horaInicio: String? = null,
     var horaFinal: String? = null,
     var notas: String? = null,
-    var nombresMascotas: List<String>? = null
+    var nombresMascotas: List<String>? = null,
+    var createdAt: Long = 0L
 )

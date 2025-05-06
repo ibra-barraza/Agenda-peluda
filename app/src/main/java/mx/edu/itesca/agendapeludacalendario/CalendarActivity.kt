@@ -168,6 +168,8 @@ class CalendarActivity : AppCompatActivity() {
         intent.putExtra("horaInicio", actividad.horaInicio)
         intent.putExtra("horaFinal", actividad.horaFinal)
         intent.putExtra("notas", actividad.notas)
+        intent.putExtra("fecha", actividad.fecha)
+        intent.putExtra("createdAt", actividad.createdAt)
         startActivity(intent)
     }
 

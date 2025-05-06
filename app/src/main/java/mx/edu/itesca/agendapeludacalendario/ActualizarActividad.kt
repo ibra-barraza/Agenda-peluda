@@ -1,5 +1,6 @@
 package mx.edu.itesca.agendapeludacalendario
 
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -17,6 +18,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Calendar
+import java.util.Locale
 
 class ActualizarActividad : AppCompatActivity() {
 
@@ -95,6 +98,14 @@ class ActualizarActividad : AppCompatActivity() {
             tipoActividad.setSelection(0)
         }
 
+        horaInicioEditText.setOnClickListener {
+            mostrarTimePicker(horaInicioEditText)
+        }
+
+        horaFinalEditText.setOnClickListener {
+            mostrarTimePicker(horaFinalEditText)
+        }
+
         updateButton.setOnClickListener {
             actualizarActividad()
         }
@@ -131,15 +142,92 @@ class ActualizarActividad : AppCompatActivity() {
             "notas" to notasEditText,
         )
 
-        db.collection("usuarios").document(userId)
-            .collection("actividades").document(actividadId)
-            .update(actividadActualizada as Map<String, Any>)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Actividad actualizada correctamente", Toast.LENGTH_SHORT).show()
-                finish()
+        val radioGroup = findViewById<RadioGroup>(R.id.radioGroupModo)
+        val checkedId = radioGroup.checkedRadioButtonId
+        val currentFecha = intent.getStringExtra("fecha") ?: ""
+        val currentCreatedAt = intent.getLongExtra("createdAt", 0)
+
+        when (checkedId) {
+            R.id.rbIndividual -> {
+                db.collection("usuarios").document(userId)
+                    .collection("actividades").document(actividadId)
+                    .update(actividadActualizada as Map<String, Any>)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Actividad actualizada correctamente", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Error al actualizar", Toast.LENGTH_SHORT).show()
+                    }
             }
-            .addOnFailureListener {
-                Toast.makeText(this, "Error al actualizar", Toast.LENGTH_SHORT).show()
+
+            R.id.rbSiguientes -> {
+                db.collection("usuarios").document(userId)
+                    .collection("actividades")
+                    .whereEqualTo("createdAt", currentCreatedAt)
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        val batch = db.batch()
+                        for (doc in documents) {
+                            val fechaActividad = doc.getString("fecha") ?: continue
+                            if (esFechaMayor(fechaActividad, currentFecha)) {
+                                val ref = doc.reference
+                                batch.update(ref, actividadActualizada as Map<String, Any>)
+                            }
+                        }
+                        batch.commit().addOnSuccessListener {
+                            Toast.makeText(this, "Actividades siguientes actualizadas", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }.addOnFailureListener {
+                            Toast.makeText(this, "Error al actualizar", Toast.LENGTH_SHORT).show()
+                        }
+                    }
             }
+
+            R.id.rbTodas -> {
+                db.collection("usuarios").document(userId)
+                    .collection("actividades")
+                    .whereEqualTo("createdAt", currentCreatedAt)
+                    .get()
+                    .addOnSuccessListener { documents ->
+                        val batch = db.batch()
+                        for (doc in documents) {
+                            val ref = doc.reference
+                            batch.update(ref, actividadActualizada as Map<String, Any>)
+                        }
+                        batch.commit().addOnSuccessListener {
+                            Toast.makeText(this, "Todas las actividades actualizadas", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }.addOnFailureListener {
+                            Toast.makeText(this, "Error al actualizar", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            }
+        }
+    }
+
+    private fun mostrarTimePicker(editText: EditText) {
+        val calendario = Calendar.getInstance()
+        val hora = calendario.get(Calendar.HOUR_OF_DAY)
+        val minuto = calendario.get(Calendar.MINUTE)
+
+        val timePicker = TimePickerDialog(this, { _, hourOfDay, minute ->
+            val horaFormateada = String.format("%02d:%02d", hourOfDay, minute)
+            editText.setText(horaFormateada)
+        }, hora, minuto, true)
+
+        timePicker.show()
+    }
+
+    private fun esFechaMayor(fecha1: String, fecha2: String): Boolean {
+        val formato = java.text.SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        return try {
+            val date1 = formato.parse(fecha1)
+            val date2 = formato.parse(fecha2)
+            date1.after(date2) || date1.equals(date2)
+        } catch (e: Exception) {
+            Log.e("FechaParseError", "Error: ${e.message}")
+            false
+        }
     }
 }

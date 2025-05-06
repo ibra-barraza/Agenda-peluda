@@ -134,6 +134,8 @@ class activity_add_event : AppCompatActivity() {
                 generarFechasRepetidas(fechaInicial, repeticion, 10)
             }
 
+            val createdAt = System.currentTimeMillis()
+
             for (fecha in fechas) {
                 val actividadToDo = ActividadItem(
                     titulo = titulo,
@@ -142,7 +144,8 @@ class activity_add_event : AppCompatActivity() {
                     horaInicio = horaInicio,
                     horaFinal = horaFinal,
                     notas = notas,
-                    nombresMascotas = mascotasSeleccionadas
+                    nombresMascotas = mascotasSeleccionadas,
+                    createdAt = createdAt
                 )
 
                 val actividadRef = db.collection("usuarios")
