@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/quicksand_bold"
-        android:text="Mascota(s)"
+        android:text=" Mascota(s)"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -135,7 +135,7 @@
         android:id="@+id/notas"
         android:layout_width="match_parent"
         android:layout_height="99dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:drawable/editbox_background"
         android:fontFamily="@font/quicksand_regular"
         android:gravity="top"
@@ -199,19 +199,47 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/quicksand_bold"
         android:text="Repetir"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
         android:drawableStart="@drawable/ic_repeat"/>
 
     <Spinner
         android:id="@+id/spinner_repeticion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:paddingVertical="12dp" />
+
+    <LinearLayout
+        android:id="@+id/layoutCantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/labelCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@android:color/black"
+            android:text="¿Cada cuántos días?"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_calendar"/>
+
+        <Spinner
+            android:id="@+id/spinnerCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/quicksand_regular"
+            android:minHeight="48dp"
+            android:paddingVertical="12dp" />
+    </LinearLayout>
 
 </LinearLayout>

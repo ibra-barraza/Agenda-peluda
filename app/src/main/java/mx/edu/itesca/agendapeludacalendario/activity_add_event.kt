@@ -3,12 +3,15 @@ package mx.edu.itesca.agendapeludacalendario
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -83,6 +86,39 @@ class activity_add_event : AppCompatActivity() {
         adapterRepeticion.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerRepeticion.adapter = adapterRepeticion
 
+        val layoutCantidad = findViewById<LinearLayout>(R.id.layoutCantidad)
+        val labelCantidad = findViewById<TextView>(R.id.labelCantidad)
+        val spinnerCantidad = findViewById<Spinner>(R.id.spinnerCantidad)
+        val cantidades = (1..12).toList().map { it.toString() }
+        val cantidadAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, cantidades)
+        spinnerCantidad.adapter = cantidadAdapter
+
+        spinnerRepeticion.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long
+            ) {
+                when (opcionesRepeticion[position]) {
+                    "Diaria" -> {
+                        layoutCantidad.visibility = View.VISIBLE
+                        labelCantidad.text = "¿Cada cuántos días?"
+                    }
+                    "Semanal" -> {
+                        layoutCantidad.visibility = View.VISIBLE
+                        labelCantidad.text = "¿Cada cuántas semanas?"
+                    }
+                    "Mensual" -> {
+                        layoutCantidad.visibility = View.VISIBLE
+                        labelCantidad.text = "¿Cada cuántos meses?"
+                    }
+                    else -> {
+                        layoutCantidad.visibility = View.GONE
+                    }
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
         val buttonCancelEvent: Button = findViewById(R.id.btnCancelEvent)
         buttonCancelEvent.setOnClickListener {
             startActivity(Intent(this, CalendarActivity::class.java))
@@ -128,10 +164,17 @@ class activity_add_event : AppCompatActivity() {
 
             val fechaMillis = intent.getLongExtra("fechaSeleccionada", System.currentTimeMillis())
             val fechaInicial = Date(fechaMillis)
+
+            val cantidad = if (layoutCantidad.visibility == View.VISIBLE) {
+                spinnerCantidad.selectedItem.toString().toIntOrNull() ?: 5
+            } else {
+                5
+            }
+
             val fechas = if (repeticion == "No repetir") {
                 listOf(fechaInicial)
             } else {
-                generarFechasRepetidas(fechaInicial, repeticion, 10)
+                generarFechasRepetidas(fechaInicial, repeticion, cantidad)
             }
 
             val createdAt = System.currentTimeMillis()
