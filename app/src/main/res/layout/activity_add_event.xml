@@ -1,245 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Color_principal"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".activity_add_event">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingVertical="8dp">
-
-        <Button
-            android:id="@+id/btnCancelEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="Cancelar"
-            android:textColor="@color/Color_Botton"
-            app:icon="@drawable/ic_close"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@color/black" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/quicksand_bold"
-            android:gravity="center"
-            android:text="Nueva actividad"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnAddEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/ic_add"
-            android:enabled="true"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="Agregar"
-            android:textColor="@color/Color_Botton" /> <!-- Icono de agregar -->
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/quicksand_bold"
-        android:text="Título"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/tituloActividad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@android:drawable/editbox_background"
-        android:fontFamily="@font/quicksand_regular"
-        android:hint="Título"
-        android:inputType="text"
-        android:padding="12dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:maxLength="100"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/quicksand_bold"
-        android:text=" Mascota(s)"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:drawableStart="@drawable/ic_pets"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fillViewport="true">
-
+        android:orientation="vertical">
         <LinearLayout
-            android:id="@+id/mascotasContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/quicksand_bold"
-        android:text="Actividad"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnCancelEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Cancelar"
+                android:textColor="@color/Color_Botton"
+                app:icon="@drawable/ic_close"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@color/black" />
 
-    <Spinner
-        android:id="@+id/tipo_actividad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/quicksand_regular"
-        android:minHeight="48dp"
-        android:paddingVertical="12dp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Nueva actividad"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/quicksand_bold"
-        android:text="Notas"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:drawableStart="@drawable/ic_notes"/>
+            <Button
+                android:id="@+id/btnAddEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_add"
+                android:enabled="true"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Agregar"
+                android:textColor="@color/Color_Botton" /> <!-- Icono de agregar -->
 
-    <EditText
-        android:id="@+id/notas"
-        android:layout_width="match_parent"
-        android:layout_height="99dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/editbox_background"
-        android:fontFamily="@font/quicksand_regular"
-        android:gravity="top"
-        android:hint="Notas"
-        android:inputType="textMultiLine"
-        android:lines="3"
-        android:minHeight="120dp"
-        android:padding="12dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:maxLength="200"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/quicksand_bold"
-        android:text="Hora de inicio"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:drawableStart="@drawable/ic_time"/>
-
-    <EditText
-        android:id="@+id/horaInicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/editbox_background"
-        android:clickable="true"
-        android:focusable="false"
-        android:fontFamily="@font/quicksand_regular"
-        android:hint="Selecciona la hora de inicio"
-        android:padding="12dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_bold"
-        android:text="Hora final"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:drawableStart="@drawable/ic_time"/>
-
-    <EditText
-        android:id="@+id/horaFinal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/editbox_background"
-        android:clickable="true"
-        android:focusable="false"
-        android:fontFamily="@font/quicksand_regular"
-        android:hint="Selecciona la hora final"
-        android:padding="12dp"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/quicksand_bold"
-        android:text="Repetir"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:drawableStart="@drawable/ic_repeat"/>
-
-    <Spinner
-        android:id="@+id/spinner_repeticion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:paddingVertical="12dp" />
-
-    <LinearLayout
-        android:id="@+id/layoutCantidad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/labelCantidad"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/quicksand_bold"
+            android:text="Título"
             android:textColor="@android:color/black"
-            android:text="¿Cada cuántos días?"
             android:textSize="16sp"
-            android:drawableStart="@drawable/ic_calendar"/>
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tituloActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:drawable/editbox_background"
+            android:fontFamily="@font/quicksand_regular"
+            android:hint="Título"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:maxLength="100"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text=" Mascota(s)"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_pets"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/mascotasContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Actividad"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Spinner
-            android:id="@+id/spinnerCantidad"
-            android:layout_width="wrap_content"
+            android:id="@+id/tipo_actividad"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/quicksand_regular"
             android:minHeight="48dp"
             android:paddingVertical="12dp" />
-    </LinearLayout>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Notas"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_notes"/>
+
+        <EditText
+            android:id="@+id/notas"
+            android:layout_width="match_parent"
+            android:layout_height="99dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:fontFamily="@font/quicksand_regular"
+            android:gravity="top"
+            android:hint="Notas"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:minHeight="120dp"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:maxLength="200"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Hora de inicio"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_time"/>
+
+        <EditText
+            android:id="@+id/horaInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:clickable="true"
+            android:focusable="false"
+            android:fontFamily="@font/quicksand_regular"
+            android:hint="Selecciona la hora de inicio"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Hora final"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_time"/>
+
+        <EditText
+            android:id="@+id/horaFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:clickable="true"
+            android:focusable="false"
+            android:fontFamily="@font/quicksand_regular"
+            android:hint="Selecciona la hora final"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Repetir"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_repeat"/>
+
+        <Spinner
+            android:id="@+id/spinner_repeticion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="12dp" />
+
+        <LinearLayout
+            android:id="@+id/layoutCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/labelCantidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:textColor="@android:color/black"
+                android:text="¿Cada cuántos días?"
+                android:textSize="16sp"
+                android:drawableStart="@drawable/ic_calendar"/>
+
+            <Spinner
+                android:id="@+id/spinnerCantidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:minHeight="48dp"
+                android:paddingVertical="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
